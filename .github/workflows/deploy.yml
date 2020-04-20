@@ -13,7 +13,7 @@ jobs:
             # https://github.com/actions/setup-node#readme
             - name: Install Node and dependencies
               uses: actions/setup-node@v1
-               with:
+              with:
                 node-version: 12.x
             # Install dependencies
             - run: npm ci
@@ -22,7 +22,7 @@ jobs:
             - run: npx @11ty/eleventy --pathprefix='/techblog/'
             - name: Deploy on gh-pages
               uses: peaceiris/actions-gh-pages@v1.1.0
-               env:
+              env:
                 PUBLISH_DIR: _site 
                 PUBLISH_BRANCH: gh-pages
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
