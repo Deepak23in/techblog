@@ -23,7 +23,7 @@ jobs:
             - name: Deploy on gh-pages
               run: |  
                 echo 'DS test'
-                echo 'git user name : ${{GITHUB_USER}}, token : ${{ secrets.GITHUB_TOKEN }}'
+                echo 'git user name : ${{github.event.schedule.user.login}}, token : ${{ secrets.GITHUB_TOKEN }}'
                 git config --global user.name 'leancoder23'
                 git config --global user.email 'leancoder23@users.noreply.github.com'
                 npx gh-pages -d _site -r https://github.com/leancoder23/techblog.git
