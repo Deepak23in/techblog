@@ -24,9 +24,10 @@ jobs:
               run: |  
                 echo 'DS test'
                 echo 'git user name : ${{github.event.schedule.user.login}}, token : ${{ secrets.GITHUB_TOKEN }}'
-                npx gh-pages -d _site -r https://techblog:${{secrets.GITHUB_TOKEN}}github.com/leancoder23/techblog.git
+                npx gh-pages -d _site -r https://github.com/leancoder23/techblog.git
               env:
                 GITHUB_USER: ${{ github.event.schedule.user.login }}
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
               #uses: peaceiris/actions-gh-pages@v1.1.0
               #env:
