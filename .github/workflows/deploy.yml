@@ -19,7 +19,7 @@ jobs:
             - run: npm ci
             # Build eventy with prefixurl
             - name: Build Eventy
-            - run: npx @11ty/eleventy --pathprefix='/techblog/'
+              run: npx @11ty/eleventy --pathprefix='/techblog/'
             - name: Deploy on gh-pages
               uses: peaceiris/actions-gh-pages@v1.1.0
               env:
