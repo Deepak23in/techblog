@@ -22,10 +22,11 @@ jobs:
               run: npx @11ty/eleventy --pathprefix='/techblog/'
             - name: Deploy on gh-pages
               run: |
-                
+                echo 'DS test'
+                echo ${GITHUB_USER}
                 npx gh-pages -d _site -r https://github.com/leancoder23/techblog.git
-              #env:
-              #  GITHUB_USER: ${{ github.event.schedule.user.login }}
+              env:
+                GITHUB_USER: ${{ github.event.schedule.user.login }}
 
               #uses: peaceiris/actions-gh-pages@v1.1.0
               #env:
