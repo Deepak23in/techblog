@@ -21,9 +21,9 @@ jobs:
             - name: Build Eventy
               run: npx @11ty/eleventy --pathprefix='/techblog/'
             - name: Deploy on gh-pages
-              run: |
+              run: |  
                 echo 'DS test'
-                echo ${GITHUB_USER}
+                echo 'git user name : ${GITHUB_USER}'
                 npx gh-pages -d _site -r https://github.com/leancoder23/techblog.git
               env:
                 GITHUB_USER: ${{ github.event.schedule.user.login }}
