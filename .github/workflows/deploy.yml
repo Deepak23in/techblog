@@ -21,8 +21,9 @@ jobs:
             - name: Build Eventy
               run: npx @11ty/eleventy --pathprefix='/techblog/'
             - name: Deploy on gh-pages
-              uses: peaceiris/actions-gh-pages@v1.1.0
-              env:
-                PUBLISH_DIR: _site 
-                PUBLISH_BRANCH: gh-pages
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: npx gh-pages -d _site
+              #uses: peaceiris/actions-gh-pages@v1.1.0
+              #env:
+              #  PUBLISH_DIR: _site 
+              #  PUBLISH_BRANCH: gh-pages
+              #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
