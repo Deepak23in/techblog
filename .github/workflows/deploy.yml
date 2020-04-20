@@ -21,7 +21,12 @@ jobs:
             - name: Build Eventy
               run: npx @11ty/eleventy --pathprefix='/techblog/'
             - name: Deploy on gh-pages
-              run: npx gh-pages -d _site
+              run: |
+                
+                npx gh-pages -d _site -r https://github.com/leancoder23/techblog.git
+              #env:
+              #  GITHUB_USER: ${{ github.event.schedule.user.login }}
+
               #uses: peaceiris/actions-gh-pages@v1.1.0
               #env:
               #  PUBLISH_DIR: _site 
