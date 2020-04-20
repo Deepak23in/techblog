@@ -8,10 +8,11 @@ jobs:
             # Make files accessible to actions
             # https://github.com/actions/checkout#readme
             - uses: actions/checkout@v2
-            - name: Install Node and dependencies
+          
             # Install Node
             # https://github.com/actions/setup-node#readme
-            - uses: actions/setup-node@v1
+            - name: Install Node and dependencies
+              uses: actions/setup-node@v1
                with:
                 node-version: 12.x
             # Install dependencies
