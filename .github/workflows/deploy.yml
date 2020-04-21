@@ -21,12 +21,19 @@ jobs:
             - name: Build Eventy
               run: npx @11ty/eleventy --pathprefix='/techblog/'
             - name: Deploy on gh-pages
-              run: |  
-                echo 'DS test'
-                echo 'git user name : ${{github.event.schedule.user.login}}, token : ${{ secrets.GITHUB_TOKEN }}'
-                npx gh-pages -d _site -r https://github.com/leancoder23/techblog.git
+              run: | 
+                echo 'Cloning gh-pages' 
+                git clone -b gh-pages "https://$GITHUB_TOKEN@github.com/leancoder23/techblog.git" gh-pages
+                ls -ltr gh-pages
+                rm -rf gh-pages/*
+                echo 'After remove'
+                ls -ltr gh-pages
+                cp _site/* gh-pages
+                echo 'After Copy'
+                ls -ltr gh-pages
+                cd gh-pages
+                git push
               env:
-                GITHUB_USER: ${{ github.event.schedule.user.login }}
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
               #uses: peaceiris/actions-gh-pages@v1.1.0
