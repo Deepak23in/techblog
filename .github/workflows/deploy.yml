@@ -21,23 +21,22 @@ jobs:
             - name: Build Eventy
               run: npx @11ty/eleventy --pathprefix='/techblog/'
             - name: Deploy on gh-pages
-              run: | 
-                echo 'Cloning gh-pages' 
-                git clone -b gh-pages "https://$GITHUB_TOKEN@github.com/leancoder23/techblog.git" gh-pages
-                ls -ltr gh-pages
-                rm -rf gh-pages/*
-                echo 'After remove'
-                ls -ltr gh-pages
-                cp -r _site/* gh-pages
-                echo 'After Copy'
-                ls -ltr gh-pages
-                cd gh-pages
-                git push
-              env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-              #uses: peaceiris/actions-gh-pages@v1.1.0
+              #run: | 
+              #  echo 'Cloning gh-pages' 
+              #  git clone -b gh-pages "https://$GITHUB_TOKEN@github.com/leancoder23/techblog.git" gh-pages
+              #  ls -ltr gh-pages
+              #  rm -rf gh-pages/*
+              #  echo 'After remove'
+              #  ls -ltr gh-pages
+              #  cp -r _site/* gh-pages
+              #  echo 'After Copy'
+              #  ls -ltr gh-pages
+              #  cd gh-pages
+              #  git push origin gh-pages
               #env:
-              #  PUBLISH_DIR: _site 
-              #  PUBLISH_BRANCH: gh-pages
               #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              uses: peaceiris/actions-gh-pages@v3
+              env:
+                PUBLISH_DIR: _site 
+                PUBLISH_BRANCH: gh-pages
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
