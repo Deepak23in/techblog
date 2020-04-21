@@ -4,3 +4,4 @@ pageTitle: Home page
 ---
 Welcome to my first Static site 
 Deployed via continous deployment - via direct gh-pages script
+only track changes
