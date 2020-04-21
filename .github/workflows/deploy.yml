@@ -24,13 +24,13 @@ jobs:
               run: | 
                 echo 'Cloning gh-pages' 
                 git clone -b gh-pages "https://$GITHUB_TOKEN@github.com/leancoder23/techblog.git" gh-pages
-                ls -ltr gh-pages
+                tree gh-pages
                 rm -rf gh-pages/*
                 echo 'After remove'
-                ls -ltr gh-pages
-                cp _site/* gh-pages
+                tree gh-pages
+                cp -r _site/* gh-pages
                 echo 'After Copy'
-                ls -ltr gh-pages
+                tree gh-pages
                 cd gh-pages
                 git push
               env:
