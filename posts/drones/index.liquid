@@ -1,8 +1,11 @@
 ---
-title: Welcome to my blog
-override:tags: []
+title: Drones
+tagName: drones
+override:tags: 
+    - category
 ---
-{% for post in collections.category %}
+
+{% for post in collections.drones %}
     <h2><a href="{{ post.url  | url }}">{{ post.data.title }}</a></h2>
     <em>{{ post.date | date: "%Y-%m-%d" }}</em>
-{% endfor %} 
+{% endfor %}

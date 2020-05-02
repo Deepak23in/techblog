@@ -1,13 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
     <title>{{pageTitle}}</title>
 </head>
-<body>
-    <h1>{{ pageTitle }}</h1>
 
-    {{ content }}   
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+                    <a href="{{'/' | url}}" class="logo"><strong>Lean Tech Guide</strong></a>
+                </header>
+                <!-- Content -->
+                <div class="content">
+                    <header>
+                        {{ title }}
+                    </header>
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Search -->
+                <section id="search" class="alt">
+                    <form method="post" action="#">
+                        <input type="text" name="query" id="query" placeholder="Search" />
+                    </form>
+                </section>
+                <!-- main Menu -->
+
+                <nav id="menu">
+                    <ul>
+                        <li><a href="{{'/' | url}}">Home</a></li>
+                        <li><a href="{{'/about' | url}}">About us</a></li>   
+                        <li><!-- empty li for bottom padding --></li>
+                    </ul>
+                    <!-- Categories -->
+                        <header class="major">
+                            <h2>Categories</h2>
+                        </header>
+                        <ul>
+                            {% for cat in collections.category %}
+                            <li>
+                               <span class="opener">{{ cat.data.title }}</span>
+                               <ul>
+                                <li><a href="{{ cat.url  | url }}">All</a></li>
+                                {% for post in collections[cat.data.tagName] %}
+                                <li><a href="{{ post.url  | url }}">{{ post.data.title }}</a></li>
+                                {% endfor %}
+                                </ul>
+                                
+                            </li>
+                            {% endfor %}
+
+                        </ul>  
+                </nav>
+
+                <!-- Section -->
+                <section>
+                    <header class="major">
+                        <h2>Get in touch</h2>
+                    </header>
+                    <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem
+                        ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+                        tempus aliquam.</p>
+                    <ul class="contact">
+                        <li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+                        <li class="icon solid fa-phone">(000) 000-0000</li>
+                        <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+                            Nashville, TN 00000-0000</li>
+                    </ul>
+                </section>
+
+                <!-- Footer -->
+                <footer id="footer">
+                    <p class="copyright">&copy; leantechguide. All rights reserved</p>
+                </footer>
+
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
+
 </html>
