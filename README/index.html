@@ -1,1 +1,32 @@
-<h1>Page header</h1>
+<h2>Prerequisite</h2>
+<p>Node 12.0 or higher</p>
+<h2>Clone the Repo and run locally</h2>
+<p><code>Git clone https://github.com/leancoder23/techblog.git</code></p>
+<h2>Install dependencies</h2>
+<p><code>run npm install</code></p>
+<h1>How to create post</h1>
+<h2>Add post to existing category</h2>
+<p>Add new markdown file under folder posts-&gt;[specific category]
+Add frontmatter for the new post at the top and the post title</p>
+<h2>Add local image to post</h2>
+<p>Copy image to image folder and refer image url to by passing to url filter e.g. <code>.</code></p>
+<h2>Add new post category</h2>
+<ul>
+<li>Create a new folder specific to the category under posts folder</li>
+<li>Add [folder name].json</li>
+<li>Add following json</li>
+</ul>
+<pre><code>{
+&quot;layout&quot;: &quot;post-layout.liquid&quot;,
+&quot;tags&quot;: [&quot;post&quot;]
+}
+</code></pre>
+<ul>
+<li>Add index.md in this folder and add following contents</li>
+</ul>
+<pre><code>---
+layout: postList-layout.liquid
+ tagName: 
+ override:tags: []
+---
+</code></pre>
