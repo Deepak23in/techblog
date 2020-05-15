@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="{{'/assets/css/main.css' | url}}" />
-    <title>{{pageTitle}}</title>
+    <title>{{title}}</title>
 </head>
 
 <body class="is-preload">
@@ -16,13 +16,10 @@
             <div class="inner">
                 <!-- Header -->
                 <header id="header">
-                    <a href="{{'/' | url}}" class="logo"><strong>Lean Tech Guide</strong></a>
+                    <a href="{{'/' | url}}" class="logo"><b>Lean Tech Guide</b></a>
                 </header>
                 <!-- Content -->
                 <div class="content">
-                    <header>
-                        {{ title }}
-                    </header>
                     {{ content }}
                 </div>
             </div>

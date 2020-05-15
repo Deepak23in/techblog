@@ -1,7 +1,7 @@
 ---
 layout: postList-layout.liquid
-title: Tools
-tagName: tools
+title: Internet of things (IoT)
+tagName: iot
 override:tags: 
     - category
 ---

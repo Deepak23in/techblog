@@ -1,0 +1,28 @@
+---
+layout: base-layout.liquid
+---
+<section>
+
+    <header class="main">
+        <h2>
+            All {{title}} posts
+        </h2>
+    </header>
+    <div>    
+        {% if tagName==null or collections[tagName]==null or collections[tagName].size==0  %}
+        <p>
+            <em>No post is available under this category</em>
+        </p>
+        {% else %}
+        {% for post in collections[tagName] %}
+          <p>
+            <h3 class="major"><a href="{{ post.url  | url }}">{{ post.data.title }}</a></h3>
+            <p>{{post.data.description}}</p>
+            <em>Posted on: {{ post.date | date: "%Y-%m-%d" }}</em>
+            <hr />
+            <p>
+                {% endfor %}
+          {% endif %}      
+    </div>
+
+</section>

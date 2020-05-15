@@ -1,7 +1,7 @@
 ---
 layout: postList-layout.liquid
-title: Tools
-tagName: tools
-override:tags: 
+title: Travel
+tagName: travel
+override:tags:
     - category
 ---

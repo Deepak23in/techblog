@@ -1,8 +1,0 @@
----
-title: Welcome to my blog
-override:tags: []
----
-{% for post in collections.category %}
-    <h2><a href="{{ post.url  | url }}">{{ post.data.title }}</a></h2>
-    <em>{{ post.date | date: "%Y-%m-%d" }}</em>
-{% endfor %} 

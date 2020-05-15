@@ -1,7 +1,7 @@
 ---
 layout: postList-layout.liquid
-title: Tools
-tagName: tools
+title: Technical Certifications
+tagName: certifications
 override:tags: 
     - category
 ---
